@@ -20,7 +20,7 @@ app.post("/", function(req, res) {
     
     //build up the URL for the JSON query, API Key is // secret and needs to be obtained by signup 
         const units = "imperial";
-        const apiKey = "641cb52b57932fde2fd10a671a6c6538";
+        const apiKey = "67f6b382921c1e89b39b20d4f9556f22";
         const url = "https://api.openweathermap.org/data/2.5/weather?q=" + cityname + "&units=" + units + "&APPID=" + apiKey;
     
     // this gets the data from Open WeatherPI
@@ -40,8 +40,8 @@ app.post("/", function(req, res) {
             
             // displays the output of the results
             res.write("<h1> The weather is " + weatherDescription + "<h1>");
-            res.write("<h2>The Temperature in " + city + " is " + temp + " Degrees Fahrenheit<h2>" + "Humidity is " + humidity + "Wind Speed is " + windSpeed);
-          
+            res.write("<h2>The Temperature in " + city + " is " + temp + " Degrees Fahrenheit<h2>");
+            res.write("Humidity is " + humidity + "% with wind speed of " + windSpeed+  " miles/hour");
             res.write("<img src=" + imageURL +">");
             res.send();
         });
@@ -51,6 +51,6 @@ app.post("/", function(req, res) {
 
 //Commented out these lines in Repl
 //Uncomment these lines when running on laptop
-app.listen(process.env.PORT || 3001, function() {
+app.listen(process.env.PORT || 3000, function() {
 console.log ("Server is running on port")
 });
