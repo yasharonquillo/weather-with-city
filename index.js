@@ -25,7 +25,7 @@ app.post("/", function(req, res) {
     //build up the URL for the JSON query, API Key is // secret and needs to be obtained by signup 
         const units = "imperial";
         const apiKey = "de82c0db0c44c0274ea961ddad82002b"; //Yasha API Key
-        const url = "https://api.openweathermap.org/data/2.5/find?lat=" + lat + "&lon=" + lon + "&units=" +units+ "cnt=10&APPID=" + apiKey;
+        const url = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&units=" + units + "cnt=10&APPID=" + apiKey;
     
     // this gets the data from Open WeatherPI
     https.get(url, function(response){
